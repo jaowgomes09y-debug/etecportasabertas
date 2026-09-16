@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulário de contato do projeto TI em Foco.">
+    <title>Profissionais de TI | Contato</title>
+    
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="topo">
+        <div class="container nav">
+            <a class="logo" href="index.html"><span>&lt;/&gt;</span> TI </a>
+            
+            <button class="menu-btn" id="menuBtn">☰</button>
+            
+            <nav id="menu">
+                <a href="index.html" data-pt="Início" data-en="Home">Início</a>
+                <a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a>
+                <a href="aplicacoes.html" data-pt="Aplicações" data-en="Applications">Aplicações</a>
+                <a href="bibliografia.html" data-pt="Bibliografia" data-en="References">Bibliografia</a>
+                <div class="submenu-container">
+                    <a href="creditos.html" data-pt="Créditos" data-en="Credits">Créditos</a>
+                    <div class="submenu">
+                        <a href="alunos.html" data-pt="Alunos" data-en="Students">Alunos</a>
+                        <a href="orientadores.html" data-pt="Orientadores" data-en="Advisors">Orientadores</a>
+                    </div>
+                </div>
+                <a class="ativo" href="contato.html" data-pt="Contato" data-en="Contact">Contato</a>
+            </nav>
+            
+            <button class="idioma" id="languageBtn">EN</button>
+        </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main>
+        <section class="page-header container">
+            <p class="tag">CONTATO</p>
+            <h1 data-pt="Fale com a equipe" data-en="Contact the team">Fale com a equipe</h1>
+            <p data-pt="Envie uma mensagem, avalie o site ou deixe uma sugestão." data-en="Send a message, rate the website or leave a suggestion.">
+                Envie uma mensagem, avalie o site ou deixe uma sugestão.
+            </p>
+        </section>
+
+        <section class="container contato-grid">
+            <!-- Formulário de Contato -->
+            <form id="contactForm" novalidate>
+                <div class="campo">
+                    <label for="nome" data-pt="Nome completo" data-en="Full name">Nome completo</label>
+                    <input id="nome" name="nome" type="text" minlength="3">
+                    <small class="erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="email" data-pt="E-mail" data-en="Email">E-mail</label>
+                    <input id="email" name="email" type="email" required placeholder="ex@email.com" data-pt-placeholder="exemplo@email.com" data-en-placeholder="example@email.com">
+                    <small class="erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="telefone" data-pt="Telefone" data-en="Phone">Telefone</label>
+                    <input id="telefone" name="telefone" type="tel" pattern="[0-9() +.-]{8,}" required placeholder="(19) 99999-9999" data-pt-placeholder="(19) 99999-9999" data-en-placeholder="(19) 99999-9999">
+                    <small class="erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="nota" data-pt="Avalie nosso site" data-en="Rate our website">Avalie nosso site</label>
+                    <select id="nota" name="nota" required>
+                        <option value="" data-pt="Selecione" data-en="Select">Selecione</option>
+                        <option data-pt="1 - Ruim" data-en="1 - Bad">1 - Ruim</option>
+                        <option data-pt="2 - Regular" data-en="2 - Fair">2 - Regular</option>
+                        <option data-pt="3 - Bom" data-en="3 - Good">3 - Good</option>
+                        <option data-pt="4 - Muito bom" data-en="4 - Very good">4 - Muito bom</option>
+                        <option data-pt="5 - Excelente" data-en="5 - Excellent">5 - Excelente</option>
+                    </select>
+                    <small class="erro"></small>
+                </div>
+
+                <div class="campo">
+                    <label for="comentario" data-pt="Comentário" data-en="Comment">Comentário</label>
+                    <textarea id="comentario" name="comentario"></textarea>
+                </div>
+
+                <button class="btn principal" type="submit" data-pt="Enviar avaliação" data-en="Send review">Enviar avaliação</button>
+                <p id="formMsg" class="form-msg"></p>
+            </form>
+
+            <!-- Informações de Apoio -->
+            <aside class="contato-info">
+                <h2 data-pt="Equipe" data-en="Team">Equipe</h2>
+                <p>João Inácio • Breno • Caio • Bernardo</p>
+                
+                <h3 data-pt="Projeto" data-en="Project">Projeto</h3>
+                <p>ETEC de Hortolândia — 2026</p>
+                
+                <h3 data-pt="Disciplina" data-en="Subject">Disciplina</h3>
+                <p>PWI — Programação Web I</p>
+            </aside>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <a href="#top">
+            <img src="img/10330621.png" alt="Voltar ao topo" align="right" width="50" height="50">
+        </a>
+        <div class="container footer-grid">
+            <div>
+                <p>ETEC de Hortolândia • 2026</p>
+                <p>© <span data-pt="Todos os direitos reservados" data-en="All rights reserved"> © Todos os direitos reservados
+                    Trabalho acadêmico sem fins lucrativos.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
