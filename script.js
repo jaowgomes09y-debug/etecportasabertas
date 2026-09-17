@@ -76,8 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (valido) {
                 formMsg.textContent = idioma === "pt"
-                    ? "Avaliação enviada com sucesso! (Demonstração do formulário.)"
-                    : "Review submitted successfully! (Form demonstration.)";
+                    ? "Avaliação enviada com sucesso!"
+                    : "Review submitted successfully!";
                 form.reset();
             } else {
                 formMsg.textContent = "";
