@@ -1,805 +1,910 @@
+
 /* ==========================================
-   1. Configs globais
+   1. Configurações globais
+   ==========================================
+   Nesta parte, criamos as variáveis gerais do projeto.
+   Em vez de repetir a mesma cor em vários lugares,
+   usamos nomes como --accent, --text e --muted.
+   Isso deixa o código mais organizado e fácil de manter.
    ========================================== */
-   :root {
-    --bg: #f0f7ff;
-    --bg2: #e0effe;
-    --card: #ffffff;
-    --line: #bae6fd;
-    --text: #0f172a;
-    --muted: #475569;
-    --accent: #0284c7;
-    --accent2: #38bdf8;
-    --success: #0284c7;
-    --danger: #e11d48;
-    --max: 1120px;
+:root {
+  --bg: #f0f7ff;
+  --bg2: #e0effe;
+  --card: #ffffff;
+  --line: #bae6fd;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #0284c7;
+  --accent2: #38bdf8;
+  --success: #0284c7;
+  --danger: #e11d48;
+  --max: 1120px;
+}
+
+/* Reset básico para remover margens e preenchimentos padrões do navegador. */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Faz a rolagem da página ficar suave quando clicamos em links internos. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilo padrão do corpo do site: fonte, fundo e cor do texto. */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: radial-gradient(circle at 80% 0%, #e0effe 0, #f0f7ff 38%);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Remove o sublinhado dos links e herda a cor do texto pai. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Centraliza o conteúdo principal em um máximo de largura definido. */
+.container {
+  width: min(92%, var(--max));
+  margin: auto;
+}
+
+/* ==========================================
+   2. Navegação do site
+   ==========================================
+   Aqui ficam os estilos da barra superior com o logo,
+   links do menu, submenu e botão de idioma.
+   A navegação é importante porque orienta o usuário pelo site.
+   ========================================== */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(240, 247, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Define o alinhamento da barra de navegação e a altura dela. */
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Estilo do logo do projeto. */
+.logo {
+  font-size: 1.18rem;
+  font-weight: 800;
+  white-space: nowrap;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+/* Menu principal da navegação alinhado à direita. */
+nav {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* Cada link do menu recebe preenchimento, cor e arredondamento. */
+nav a {
+  padding: 10px 13px;
+  color: var(--muted);
+  font-size: .94rem;
+  border-radius: 8px;
+  transition: .2s;
+}
+
+/* Quando o mouse passa por cima ou quando o item está ativo, muda de cor. */
+nav a:hover,
+nav a.ativo {
+  color: var(--accent);
+  background: #e0effe;
+}
+
+/* Container do submenu, como um menu dropdown. */
+.submenu-container {
+  position: relative;
+}
+
+/* Caixa escondida do submenu que aparece ao passar o mouse. */
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 150px;
+  padding: 8px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+/* Exibe o submenu ao hover ou foco. */
+.submenu-container:hover .submenu,
+.submenu-container:focus-within .submenu {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Botão de idioma, com borda azul para contrastar com o fundo. */
+.idioma {
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  border-radius: 7px;
+  padding: 7px 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Botão do menu para dispositivos menores. */
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  color: var(--text);
+  font-size: 1.5rem;
+}
+
+/* ==========================================
+   3. Hero / banner principal
+   ==========================================
+   Aqui é definido o topo visual da página inicial.
+   O hero normalmente contém uma chamada principal,
+   botão de ação e um painel visual para atrair atenção.
+   ========================================== */
+.hero {
+  min-height: 620px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Tag pequena acima do título principal, usada como destaque. */
+.tag {
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+/* Título principal do site. */
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  margin-bottom: 22px;
+  letter-spacing: -2px;
+  color: var(--text);
+}
+
+h1 span {
+  color: var(--accent);
+}
+
+h2 {
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+h3 {
+  line-height: 1.2;
+  color: var(--text);
+}
+
+/* Texto do bloco de apresentação do hero. */
+.hero-text > p:not(.tag) {
+  color: var(--muted);
+  font-size: 1.08rem;
+  max-width: 650px;
+}
+
+/* Agrupa os botões do banner principal. */
+.botoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+/* Estilo base de todos os botões do site. */
+.btn {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Botão principal em azul para chamar atenção. */
+.principal {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.principal:hover {
+  filter: brightness(1.1);
+}
+
+/* Botão secundário com fundo branco e borda clara. */
+.secundario {
+  border-color: var(--line);
+  color: var(--text);
+  background: #ffffff;
+}
+
+/* ==========================================
+   4. Terminal visual na página inicial
+   ==========================================
+   Este bloco imita uma janela de terminal, com uma estética
+   tecnológica para mostrar comandos ou informações de forma visual.
+   ========================================== */
+.terminal {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 25px 50px rgba(2, 132, 199, .15);
+  overflow: hidden;
+}
+
+/* Cabeçalho do terminal com pontos coloridos e nome da sessão. */
+.terminal-top {
+  height: 44px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 14px;
+  color: var(--muted);
+  font: 12px monospace;
+  background: #f8fafc;
+}
+
+.terminal-top i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.terminal-top span {
+  margin-left: 8px;
+}
+
+/* Bloco de código exibido em fonte monoespaçada. */
+pre {
+  padding: 28px 24px;
+  overflow: auto;
+  font: 14px/1.8 Consolas, monospace;
+  color: #0f172a;
+}
+
+/* Classes para colorir partes do texto em destaque dentro do terminal. */
+.roxo { color: #0284c7; }
+.azul { color: #0369a1; }
+.verde { color: #0ea5e9; }
+
+/* ==========================================
+   5. Cards de destaques e blocos de chamada
+   ==========================================
+   Aqui ficam os cartões de informação, usados para resumir
+   conteúdos importantes do site de forma visual e organizada.
+   ========================================== */
+.destaque {
+  padding: 70px 0;
+}
+
+.section-title {
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.section-title > p:last-child,
+.page-header > p:last-child {
+  color: var(--muted);
+}
+
+/* Grid com quatro cards em desktop. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* Card individual com borda, fundo e efeito de hover. */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: .2s;
+}
+
+.card:hover,
+.prof-card:hover,
+.pessoa:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.1);
+}
+
+.icone {
+  font-size: 1.8rem;
+  margin-bottom: 18px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+/* Bloco de chamada com mensagem mais destacada para chamar a atenção. */
+.chamada {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 32px;
+  margin-bottom: 80px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.chamada p {
+  color: var(--muted);
+  max-width: 760px;
+}
+
+/* ==========================================
+   6. Estilo das páginas internas
+   ==========================================
+   As páginas internas usam um layout com cabeçalho,
+   conteúdo principal e coluna lateral com informações extras.
+   Essa estrutura ajuda a organizar textos e dados complementares.
+   ========================================== */
+.page-header {
+  padding: 85px 0 45px;
+}
+
+.page-header h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: 14px;
+}
+
+.page-header > p:last-child {
+  max-width: 750px;
+  font-size: 1.05rem;
+}
+
+/* Layout em duas colunas para texto principal e caixa lateral. */
+.conteudo {
+  padding-bottom: 80px;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 24px;
+}
+
+.texto,
+.info-box,
+.bloco,
+.nota,
+.creditos-box {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.texto p,
+.info-box p,
+.bloco p,
+.nota p,
+.aviso {
+  color: var(--muted);
+}
+
+/* Caixa lateral com destaque na borda esquerda. */
+.info-box {
+  align-self: start;
+  border-left: 3px solid var(--accent);
+}
+
+/* Timeline para mostrar etapas ou marcos em sequência. */
+.timeline {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 5px 0;
+}
+
+.timeline > div {
+  padding: 20px;
+  border-top: 2px solid var(--accent);
+  background: #ffffff;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline span {
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.timeline h3 {
+  margin: 7px 0;
+}
+
+.timeline p {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* bloco que ocupa toda a largura do conteúdo. */
+.bloco {
+  grid-column: 1/-1;
+}
+
+/* Aviso visual com fundo azul claro e borda leve para chamar atenção. */
+.aviso {
+  grid-column: 1/-1;
+  border: 1px solid #bae6fd;
+  background: #e0effe;
+  padding: 16px;
+  border-radius: 9px;
+}
+
+.aviso strong {
+  color: var(--accent);
+}
+
+/* ==========================================
+   7. Seção de profissões
+   ==========================================
+   Nesta parte, os cards de profissões recebem filtros e layout
+   em grade para facilitar a visualização das áreas de atuação.
+   ========================================== */
+.filtros {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+/* Botões de filtro para classificar profissões por categoria. */
+.filtro {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  color: var(--muted);
+  padding: 9px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.filtro:hover,
+.ativo-filtro {
+  color: #ffffff !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
+/* Grade com duas colunas para os cards de profissão. */
+.profissões {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 35px;
+}
+
+.prof-card {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 17px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 23px;
+  transition: .2s;
+}
+
+/* Ícone de cada profissão, em fundo azul suave e colorido. */
+.prof-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: #e0effe;
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.categoria {
+  font-size: .7rem;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.prof-card h2 {
+  font-size: 1.25rem;
+  margin: 4px 0 13px;
+}
+
+.prof-card p {
+  color: var(--muted);
+  font-size: .88rem;
+  margin-bottom: 7px;
+}
+
+.nota {
+  margin-bottom: 80px;
+}
+
+/* ==========================================
+   8. Referências e equipe
+   ==========================================
+   Esta seção organiza citações de fontes e perfis de pessoas
+   envolvidas no projeto ou na apresentação institucional.
+   ========================================== */
+.referencias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding-bottom: 30px;
+}
+
+.referencias article {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 15px;
+  padding: 23px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.referencias article > span {
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.referencias h2 {
+  font-size: 1.08rem;
+}
+
+.referencias p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: 9px;
+}
+
+.referencias a {
+  color: var(--accent);
+  font-size: .85rem;
+  font-weight: bold;
+}
+
+.equipe {
+  padding-bottom: 80px;
+}
+
+/* Grid para cards de pessoas ou participantes. */
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.pessoa {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 26px;
+  text-align: center;
+  transition: .2s;
+}
+
+/* Círculo com as iniciais da pessoa ou avatar simples. */
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 1.3rem;
+}
+
+.pessoa p {
+  color: var(--muted);
+}
+
+.preencher {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.pequeno {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ==========================================
+   9. Formulário de contato
+   ==========================================
+   A área de contato usa inputs, labels e mensagens de erro.
+   Isso deixa o formulário visualmente organizado e funcional.
+   ========================================== */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+form,
+.contato-info {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+/* Espaçamento entre os campos do formulário. */
+.campo {
+  margin-bottom: 17px;
+}
+
+.campo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+/* Estilo de campos de texto, select e textarea. */
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: #f8fafc;
+  color: var(--text);
+  padding: 12px;
+  border-radius: 7px;
+  outline: none;
+  font: inherit;
+}
+
+/* Quando o campo recebe foco, a borda muda de cor. */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: var(--accent);
+  background: #ffffff;
+}
+
+.campo textarea {
+  min-height: 140px;
+  resize: none;
+}
+
+/* Destaca campos inválidos quando o usuário digita algo incorreto. */
+.campo input:invalid:not(:placeholder-shown),
+.campo textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--danger);
+}
+
+/* Mensagem de erro em vermelho, pequena e alinhada abaixo do campo. */
+.erro {
+  display: block;
+  color: var(--danger);
+  min-height: 18px;
+  font-size: .78rem;
+  margin-top: 3px;
+}
+
+.form-msg {
+  margin-top: 13px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.contato-info h3 {
+  margin-top: 22px;
+  font-size: .95rem;
+  color: var(--accent);
+}
+
+.contato-info p {
+  color: var(--muted);
+}
+
+/* Bloco de código que lembra uma mensagem técnica ou identificação. */
+.mini-code {
+  margin-top: 28px;
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  padding: 17px;
+  font: 13px/1.7 monospace;
+  color: var(--accent);
+  border-radius: 8px;
+}
+
+/* ==========================================
+   10. Rodapé
+   ==========================================
+   O footer é a parte final da página e normalmente contém
+   informações de fechamento, copyright ou links úteis.
+   ========================================== */
+footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-grid strong {
+  color: var(--text);
+}
+
+/* ==========================================
+   11. Responsividade
+   ==========================================
+   A parte final do CSS ajusta o layout para telas menores,
+   como tablets e celulares. Isso é essencial para que o site
+   funcione em qualquer dispositivo.
+   ========================================== */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 70px 0;
   }
-  
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  html {
-    scroll-behavior: smooth;
+
+  .profissões,
+  .referencias {
+    grid-template-columns: 1fr;
   }
-  
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: radial-gradient(circle at 80% 0%, #e0effe 0, #f0f7ff 38%);
-    color: var(--text);
-    line-height: 1.6;
-    min-height: 100vh;
+
+  .equipe-grid {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
+
+  .conteudo {
+    grid-template-columns: 1fr;
   }
-  
-  .container {
-    width: min(92%, var(--max));
-    margin: auto;
+
+  .timeline {
+    grid-template-columns: 1fr 1fr;
   }
-  
-  /* ==========================================
-     2. Navegação
-     ========================================== */
-  .topo {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: rgba(240, 247, 255, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
+
+  .contato-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .nav {
-    min-height: 72px;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
-  
-  .logo {
-    font-size: 1.18rem;
-    font-weight: 800;
-    white-space: nowrap;
-    color: var(--text);
-  }
-  
-  .logo span {
-    color: var(--accent);
-  }
-  
-  nav {
-    display: flex;
-    gap: 4px;
-    align-items: center;
+}
+
+@media (max-width: 700px) {
+  /* Botão de menu aparece para telas pequenas. */
+  .menu-btn {
+    display: block;
     margin-left: auto;
   }
-  
-  nav a {
-    padding: 10px 13px;
-    color: var(--muted);
-    font-size: .94rem;
-    border-radius: 8px;
-    transition: .2s;
+
+  /* Menu vira um bloco vertical em celulares. */
+  nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 72px;
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
   }
-  
-  nav a:hover,
-  nav a.ativo {
-    color: var(--accent);
-    background: #e0effe;
+
+  nav.aberto {
+    display: flex;
+  }
+
+  nav a {
+    padding: 12px;
   }
 
   .submenu-container {
-    position: relative;
+    display: block;
   }
 
   .submenu {
-    display: none;
-    position: absolute;
-    top: calc(100% + 8px);
-    left: 0;
-    min-width: 150px;
-    padding: 8px;
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
-  }
-
-  .submenu-container:hover .submenu,
-  .submenu-container:focus-within .submenu {
     display: block;
+    position: static;
+    min-width: 0;
+    padding: 0 0 0 14px;
+    border: 0;
+    box-shadow: none;
   }
 
   .submenu a {
-    display: block;
-    white-space: nowrap;
+    color: var(--muted);
   }
-  
+
   .idioma {
-    border: 1px solid var(--accent);
-    background: transparent;
-    color: var(--accent);
-    border-radius: 7px;
-    padding: 7px 11px;
-    font-weight: 700;
-    cursor: pointer;
+    margin-left: 0;
   }
-  
-  .menu-btn {
-    display: none;
-    background: none;
-    border: 0;
-    color: var(--text);
-    font-size: 1.5rem;
+
+  .logo {
+    font-size: 1rem;
   }
-  
-  /* ==========================================
-     3. Hero
-     ========================================== */
-  .hero {
-    min-height: 620px;
-    display: grid;
-    grid-template-columns: 1.1fr .9fr;
-    gap: 60px;
-    align-items: center;
-  }
-  
-  .tag {
-    color: var(--accent);
-    font-size: .78rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-  }
-  
-  h1 {
-    font-size: clamp(2.4rem, 6vw, 4.7rem);
-    line-height: 1.02;
-    margin-bottom: 22px;
-    letter-spacing: -2px;
-    color: var(--text);
-  }
-  
-  h1 span {
-    color: var(--accent);
-  }
-  
-  h2 {
-    line-height: 1.2;
-    margin-bottom: 12px;
-    color: var(--text);
-  }
-  
-  h3 {
-    line-height: 1.2;
-    color: var(--text);
-  }
-  
-  .hero-text > p:not(.tag) {
-    color: var(--muted);
-    font-size: 1.08rem;
-    max-width: 650px;
-  }
-  
-  .botoes {
-    display: flex;
-    gap: 12px;
-    margin-top: 30px;
-    flex-wrap: wrap;
-  }
-  
-  .btn {
-    display: inline-block;
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-weight: 800;
-    border: 1px solid transparent;
-    cursor: pointer;
-    text-align: center;
-  }
-  
-  .principal {
-    background: var(--accent);
-    color: #ffffff;
-  }
-  
-  .principal:hover {
-    filter: brightness(1.1);
-  }
-  
-  .secundario {
-    border-color: var(--line);
-    color: var(--text);
-    background: #ffffff;
-  }
-  
-  /* ==========================================
-     4. Widget do terminal em home
-     ========================================== */
-  .terminal {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    box-shadow: 0 25px 50px rgba(2, 132, 199, .15);
-    overflow: hidden;
-  }
-  
-  .terminal-top {
-    height: 44px;
-    border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    padding: 0 14px;
-    color: var(--muted);
-    font: 12px monospace;
-    background: #f8fafc;
-  }
-  
-  .terminal-top i {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #94a3b8;
-  }
-  
-  .terminal-top span {
-    margin-left: 8px;
-  }
-  
-  pre {
-    padding: 28px 24px;
-    overflow: auto;
-    font: 14px/1.8 Consolas, monospace;
-    color: #0f172a;
-  }
-  
-  .roxo { color: #0284c7; }
-  .azul { color: #0369a1; }
-  .verde { color: #0ea5e9; }
-  
-  /* ==========================================
-     5. Cards
-     ========================================== */
-  .destaque {
-    padding: 70px 0;
-  }
-  
-  .section-title {
-    max-width: 700px;
-    margin-bottom: 30px;
-  }
-  
-  .section-title > p:last-child,
-  .page-header > p:last-child {
-    color: var(--muted);
-  }
-  
+
   .cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    grid-template-columns: 1fr;
   }
-  
-  .card {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
-    transition: .2s;
-  }
-  
-  .card:hover,
-  .prof-card:hover,
-  .pessoa:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.1);
-  }
-  
-  .icone {
-    font-size: 1.8rem;
-    margin-bottom: 18px;
-  }
-  
-  .card p {
-    color: var(--muted);
-    font-size: .92rem;
-  }
-  
-  .chamada {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    padding: 32px;
-    margin-bottom: 80px;
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-  }
-  
-  .chamada p {
-    color: var(--muted);
-    max-width: 760px;
-  }
-  
-  /* ==========================================
-     6. Paginas
-     ========================================== */
-  .page-header {
-    padding: 85px 0 45px;
-  }
-  
-  .page-header h1 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
-    margin-bottom: 14px;
-  }
-  
-  .page-header > p:last-child {
-    max-width: 750px;
-    font-size: 1.05rem;
-  }
-  
-  .conteudo {
-    padding-bottom: 80px;
-    display: grid;
-    grid-template-columns: 1.25fr .75fr;
-    gap: 24px;
-  }
-  
-  .texto,
-  .info-box,
-  .bloco,
-  .nota,
-  .creditos-box {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 28px;
-  }
-  
-  .texto p,
-  .info-box p,
-  .bloco p,
-  .nota p,
-  .aviso {
-    color: var(--muted);
-  }
-  
-  .info-box {
-    align-self: start;
-    border-left: 3px solid var(--accent);
-  }
-  
+
+  .equipe-grid,
   .timeline {
-    grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin: 5px 0;
+    grid-template-columns: 1fr;
   }
-  
-  .timeline > div {
-    padding: 20px;
-    border-top: 2px solid var(--accent);
-    background: #ffffff;
-    border-left: 1px solid var(--line);
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  
-  .timeline span {
-    color: var(--accent);
-    font-weight: 900;
-  }
-  
-  .timeline h3 {
-    margin: 7px 0;
-  }
-  
-  .timeline p {
-    color: var(--muted);
-    font-size: .9rem;
-  }
-  
-  .bloco {
-    grid-column: 1/-1;
-  }
-  
-  .aviso {
-    grid-column: 1/-1;
-    border: 1px solid #bae6fd;
-    background: #e0effe;
-    padding: 16px;
-    border-radius: 9px;
-  }
-  
-  .aviso strong {
-    color: var(--accent);
-  }
-  
-  /* ==========================================
-     7. Profissoes
-     ========================================== */
-  .filtros {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
-  }
-  
-  .filtro {
-    border: 1px solid var(--line);
-    background: #ffffff;
-    color: var(--muted);
-    padding: 9px 14px;
-    border-radius: 7px;
-    cursor: pointer;
-  }
-  
-  .filtro:hover,
-  .ativo-filtro {
-    color: #ffffff !important;
-    background: var(--accent) !important;
-    border-color: var(--accent) !important;
-  }
-  
-  .profissões {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    padding-bottom: 35px;
-  }
-  
-  .prof-card {
-    display: grid;
-    grid-template-columns: 60px 1fr;
-    gap: 17px;
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 23px;
-    transition: .2s;
-  }
-  
-  .prof-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background: #e0effe;
-    color: var(--accent);
-    display: grid;
-    place-items: center;
-    font-size: 1.4rem;
-    font-weight: bold;
-  }
-  
-  .categoria {
-    font-size: .7rem;
-    letter-spacing: 1.5px;
-    color: var(--accent);
-    font-weight: bold;
-  }
-  
-  .prof-card h2 {
-    font-size: 1.25rem;
-    margin: 4px 0 13px;
-  }
-  
-  .prof-card p {
-    color: var(--muted);
-    font-size: .88rem;
-    margin-bottom: 7px;
-  }
-  
-  .nota {
-    margin-bottom: 80px;
-  }
-  
-  /* ==========================================
-     8. Referencia
-     ========================================== */
-  .referencias {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    padding-bottom: 30px;
-  }
-  
-  .referencias article {
-    display: grid;
-    grid-template-columns: 45px 1fr;
-    gap: 15px;
-    padding: 23px;
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-  }
-  
-  .referencias article > span {
-    color: var(--accent);
-    font-weight: 900;
-    font-size: 1.2rem;
-  }
-  
-  .referencias h2 {
-    font-size: 1.08rem;
-  }
-  
-  .referencias p {
-    color: var(--muted);
-    font-size: .9rem;
-    margin-bottom: 9px;
-  }
-  
-  .referencias a {
-    color: var(--accent);
-    font-size: .85rem;
-    font-weight: bold;
-  }
-  
-  .equipe {
-    padding-bottom: 80px;
-  }
-  
-  .equipe-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
-    margin-bottom: 24px;
-  }
-  
-  .pessoa {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 26px;
-    text-align: center;
-    transition: .2s;
-  }
-  
-  .avatar {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 15px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    color: #ffffff;
-    font-weight: 900;
-    font-size: 1.3rem;
-  }
-  
-  .pessoa p {
-    color: var(--muted);
-  }
-  
-  .preencher {
-    color: var(--accent);
-    font-weight: bold;
-  }
-  
-  .pequeno {
-    font-size: .85rem;
-    color: var(--muted);
-    margin-top: 12px;
-  }
-  
-  /* ==========================================
-     9. Contato
-     ========================================== */
-  .contato-grid {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: 20px;
-    padding-bottom: 80px;
-  }
-  
-  form,
-  .contato-info {
-    background: #ffffff;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 28px;
-  }
-  
-  .campo {
-    margin-bottom: 17px;
-  }
-  
-  .campo label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 6px;
-  }
-  
-  .campo input,
-  .campo select,
-  .campo textarea {
-    width: 100%;
-    border: 1px solid var(--line);
-    background: #f8fafc;
-    color: var(--text);
-    padding: 12px;
-    border-radius: 7px;
-    outline: none;
-    font: inherit;
-  }
-  
-  .campo input:focus,
-  .campo select:focus,
-  .campo textarea:focus {
-    border-color: var(--accent);
-    background: #ffffff;
-  }
-  
-  .campo textarea {
-    min-height: 140px;
-    resize: none;
-  }
-  
-  .campo input:invalid:not(:placeholder-shown),
-  .campo textarea:invalid:not(:placeholder-shown) {
-    border-color: var(--danger);
-  }
-  
-  .erro {
-    display: block;
-    color: var(--danger);
-    min-height: 18px;
-    font-size: .78rem;
-    margin-top: 3px;
-  }
-  
-  .form-msg {
-    margin-top: 13px;
-    color: var(--accent);
-    font-weight: bold;
-  }
-  
-  .contato-info h3 {
-    margin-top: 22px;
-    font-size: .95rem;
-    color: var(--accent);
-  }
-  
-  .contato-info p {
-    color: var(--muted);
-  }
-  
-  .mini-code {
-    margin-top: 28px;
-    background: #f8fafc;
-    border: 1px solid var(--line);
-    padding: 17px;
-    font: 13px/1.7 monospace;
-    color: var(--accent);
-    border-radius: 8px;
-  }
-  
-  /* ==========================================
-     10. Footer
-     ========================================== */
-   footer {
-    border-top: 1px solid var(--line);
-    padding: 32px 0;
-    color: var(--muted);
-    font-size: .85rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.5);
-  }
-  
+
+  .chamada,
   .footer-grid {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
+    align-items: flex-start;
   }
-  
-  .footer-grid strong {
-    color: var(--text);
+
+  .prof-card {
+    grid-template-columns: 1fr;
   }
-  
-  /* ==========================================
-     11. Responsividade
-     ========================================== */
-  @media (max-width: 900px) {
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-      padding: 70px 0;
-    }
-    .cards {
-      grid-template-columns: 1fr 1fr;
-    }
-    .profissões,
-    .referencias {
-      grid-template-columns: 1fr;
-    }
-    .equipe-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-    .conteudo {
-      grid-template-columns: 1fr;
-    }
-    .timeline {
-      grid-template-columns: 1fr 1fr;
-    }
-    .contato-grid {
-      grid-template-columns: 1fr;
-    }
+
+  .prof-icon {
+    margin-bottom: 2px;
   }
-  
-  @media (max-width: 700px) {
-    .menu-btn {
-      display: block;
-      margin-left: auto;
-    }
-    nav {
-      display: none;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 72px;
-      background: #ffffff;
-      border-bottom: 1px solid var(--line);
-      padding: 12px;
-      flex-direction: column;
-      align-items: stretch;
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-    }
-    nav.aberto {
-      display: flex;
-    }
-    nav a {
-      padding: 12px;
-    }
-    .submenu-container {
-      display: block;
-    }
-    .submenu {
-      display: block;
-      position: static;
-      min-width: 0;
-      padding: 0 0 0 14px;
-      border: 0;
-      box-shadow: none;
-    }
-    .submenu a {
-      color: var(--muted);
-    }
-    .idioma {
-      margin-left: 0;
-    }
-    .logo {
-      font-size: 1rem;
-    }
-    .cards {
-      grid-template-columns: 1fr;
-    }
-    .equipe-grid,
-    .timeline {
-      grid-template-columns: 1fr;
-    }
-    .chamada,
-    .footer-grid {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    .prof-card {
-      grid-template-columns: 1fr;
-    }
-    .prof-icon {
-      margin-bottom: 2px;
-    }
-  }
+}
