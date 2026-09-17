@@ -10,77 +10,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ==================== HEADER ==================== -->
     <header class="topo">
         <div class="container nav">
             <a class="logo" href="index.html"><span>&lt;/&gt;</span> TI </a>
-            
-            <button class="menu-btn" id="menuBtn">☰</button>
-            
+            <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
             <nav id="menu">
-                <a href="index.html" data-pt="Início" data-en="Home">Início</a>
-                <a href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a>
-                <a class="ativo" href="aplicacoes.html" data-pt="Aplicações" data-en="Applications">Aplicações</a>
-                <a href="bibliografia.html" data-pt="Bibliografia" data-en="References">Bibliografia</a>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="aplicacoes.html">Aplicações</a>
+                <a href="bibliografia.html">Bibliografia</a>
                 <div class="submenu-container">
-                    <a href="creditos.html" data-pt="Créditos" data-en="Credits">Créditos</a>
+                    <a class="ativo" href="creditos.html">Créditos</a>
                     <div class="submenu">
-                        <a href="orientadores.html" data-pt="Orientadores" data-en="Advisors">Orientadores</a>
-                        <a href="desenvolvedores.html" data-pt="Dsenvolvedores" data-en="Developers">Desenvolvedores</a>
+                        <a href="orientadores.html">Orientadores</a>
+                        <a href="desenvolvedores.html">Desenvolvedores</a>
                     </div>
                 </div>
-                <a href="contato.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <a href="contato.html">Contato</a>
             </nav>
-            
-            <button class="idioma" id="languageBtn">EN</button>
+            <a href="desenvolvedores_en.html" class="idioma" id="languageBtn">EN</a>
         </div>
     </header>
 
-    <!-- ==================== MAIN CONTENT ==================== -->
     <main>
-        <!-- Page Header -->
         <section class="page-header container">
-            <h1 data-pt="APLICAÇÕES" data-en="APPLICATIONS">APLICAÇÕES</h1>
-            <p data-pt="Conheça algumas das principais funções encontradas no mercado de TI e onde elas são aplicadas." data-en="Learn about some of the main roles found in the IT market and where they are applied.">
-                Conheça algumas das principais funções encontradas no mercado de TI e onde elas são aplicadas.
-            </p>
+            <h1>APLICAÇÕES</h1>
+            <p>Conheça algumas das principais funções encontradas no mercado de TI e onde elas são aplicadas.</p>
         </section>
 
-        <!-- Professions Cards Grid -->
         <section class="container profissões">
             <article class="prof-card" data-category="conteudo">
                 <div class="prof-icon">✎</div>
                 <div>
-                    <span class="categoria" data-pt="CONTEÚDO" data-en="CONTENT">CONTEÚDO</span>
-                    <h2 data-pt="Gestor de Conteúdo Digital" data-en="Digital Content Manager">Gestor de Conteúdo Digital</h2>
-                    <p data-pt="Função: planeja, organiza, publica e acompanha conteúdos em canais digitais." data-en="Role: plans, organizes, publishes, and tracks content on digital channels.">Função: planeja, organiza, publica e acompanha conteúdos em canais digitais.</p>
-                    <p data-pt="Formação: pode envolver Marketing, Comunicação, TI, Produção de Conteúdo ou cursos relacionados." data-en="Education: can involve Marketing, Communication, IT, Content Production, or related courses.">Formação: pode envolver Marketing, Comunicação, TI, Produção de Conteúdo ou cursos relacionados.</p>
-                    <p data-pt="Onde é aplicado: em agências de marketing digital, portais de notícias, empresas de tecnologia e instituições de ensino para gerenciar sites, blogs corporativos e estratégias de engajamento nas redes sociais." data-en="Where it's applied: in digital marketing agencies, news portals, tech companies, and educational institutions to manage websites, corporate blogs, and social media engagement strategies.">Onde é aplicado: em agências de marketing digital, portais de notícias, empresas de tecnologia e instituições de ensino para gerenciar sites, blogs corporativos e estratégias de engajamento nas redes sociais.</p>
-                    <p data-pt="Salário de referência: analista de mídias sociais: média de R$ 2.872,71/mês, com piso de R$ 2.151,19 e teto de R$ 5.078,78 (Portal Salário/CAGED, 2026)." data-en="Reference salary: social media analyst: average of R$ 2,872.71/month, with a minimum of R$ 2,151.19 and a maximum of R$ 5,078.78 (Salary Portal/CAGED, 2026).">Salário de referência: analista de mídias sociais: média de R$ 2.872,71/mês, com piso de R$ 2.151,19 e teto de R$ 5.078,78 (Portal Salário/CAGED, 2026).</p>
+                    <span class="categoria">CONTEÚDO</span>
+                    <h2>Gestor de Conteúdo Digital</h2>
+                    <p>Função: planeja, organiza, publica e acompanha conteúdos em canais digitais.</p>
+                    <p>Formação: pode envolver Marketing, Comunicação, TI, Produção de Conteúdo ou cursos relacionados.</p>
+                    <p>Onde é aplicado: em agências de marketing digital, portais de notícias, empresas de tecnologia e instituições de ensino para gerenciar sites, blogs corporativos e estratégias de engajamento nas redes sociais.</p>
+                    <p>Salário de referência: analista de mídias sociais: média de R$ 2.872,71/mês, com piso de R$ 2.151,19 e teto de R$ 5.078,78 (Portal Salário/CAGED, 2026).</p>
                 </div>
             </article>
         </section>
 
-        <!-- Salary Sources Note -->
         <section class="container nota">
-            <h2 data-pt="Fonte dos valores salariais" data-en="Salary source">Fonte dos valores salariais</h2>
-            <p data-pt="Os valores desta página são referências do Portal Salário, com dados do CAGED/MTE e atualização de setembro de 2026. Eles representam salários-base de ocupações específicas e não garantem a remuneração de cada profissional." data-en="The values on this page are references from Portal Salário, based on CAGED/MTE data and updated in September 2026. They represent base salaries for specific occupations and do not guarantee an individual's pay.">
-                Os valores desta página são referências do Portal Salário, com dados do CAGED/MTE e atualização de setembro de 2026. Eles representam salários-base de ocupações específicas e não garantem a remuneração de cada profissional.
-            </p>
-            <p><a href="https://www.salario.com.br/tabela-salarial/tecnologia-da-informacao/" target="_blank" rel="noopener" data-pt="Consultar tabela salarial de TI ↗" data-en="Check IT salary table ↗">Consultar tabela salarial de TI ↗</a></p>
+            <h2>Fonte dos valores salariais</h2>
+            <p>Os valores desta página são referências do Portal Salário, com dados do CAGED/MTE e atualização de setembro de 2026. Eles representam salários-base de ocupações específicas e não garantem a remuneração de cada profissional.</p>
+            <p><a href="https://www.salario.com.br/tabela-salarial/tecnologia-da-informacao/" target="_blank" rel="noopener">Consultar tabela salarial de TI ↗</a></p>
         </section>
 
-        <!-- Career Guidance Note -->
         <section class="container nota">
-            <h2 data-pt="Como escolher uma profissão?" data-en="How to choose a career?">Como escolher uma profissão?</h2>
-            <p data-pt="Observe quais atividades você gosta de fazer: programar, analisar dados, criar interfaces, explicar conteúdos, administrar redes ou proteger informações. Depois, pesquise formações, monte projetos e conheça as exigências reais das vagas." data-en="Observe which activities you enjoy: programming, analyzing data, creating interfaces, explaining content, managing networks or protecting information. Then research education paths, build projects and learn the real requirements of job openings.">
-                Observe quais atividades você gosta de fazer: programar, analisar dados, criar interfaces, explicar conteúdos, administrar redes ou proteger informações. Depois, pesquise formações, monte projetos e conheça as exigências reais das vagas.
-            </p>
+            <h2>Como escolher uma profissão?</h2>
+            <p>Observe quais atividades você gosta de fazer: programar, analisar dados, criar interfaces, explicar conteúdos, administrar redes ou proteger informações. Depois, pesquise formações, monte projetos e conheça as exigências reais das vagas.</p>
         </section>
     </main>
-
-    <!-- ==================== FOOTER ==================== -->
 
     <footer>
         <a href="#top">
@@ -88,8 +70,8 @@
         </a>
         <div class="container footer-grid">
             <div>
-                <p data-pt="ETEC de Hortolândia 2026 - © Todos os direitos reservados" data-en="ETEC de Hortolândia 2026 - © All rights reserved">ETEC de Hortolândia 2026 - © Todos os direitos reservados</p>
-                <p><span data-pt="Trabalho acadêmico sem fins lucrativos." data-en="Non-profit academic work.">Trabalho acadêmico sem fins lucrativos.</span></p>
+                <p>ETEC de Hortolândia 2026 - © Todos os direitos reservados</p>
+                <p><span>Trabalho acadêmico sem fins lucrativos.</span></p>
             </div>
         </div>
     </footer>

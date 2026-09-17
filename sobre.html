@@ -10,30 +10,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- ==================== HEADER ==================== -->
     <header class="topo">
         <div class="container nav">
             <a class="logo" href="index.html"><span>&lt;/&gt;</span> TI </a>
-            
-            <button class="menu-btn" id="menuBtn">☰</button>
-            
+            <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
             <nav id="menu">
-                <a href="index.html" data-pt="Início" data-en="Home">Início</a>
-                <a class="ativo" href="sobre.html" data-pt="Sobre" data-en="About">Sobre</a>
-                <a href="aplicacoes.html" data-pt="Aplicações" data-en="Applications">Aplicações</a>
-                <a href="bibliografia.html" data-pt="Bibliografia" data-en="References">Bibliografia</a>
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="aplicacoes.html">Aplicações</a>
+                <a href="bibliografia.html">Bibliografia</a>
                 <div class="submenu-container">
-                    <a href="creditos.html" data-pt="Créditos" data-en="Credits">Créditos</a>
+                    <a class="ativo" href="creditos.html">Créditos</a>
                     <div class="submenu">
-                        <a href="orientadores.html" data-pt="Orientadores" data-en="Advisors">Orientadores</a>
-                        <a href="desenvolvedores.html" data-pt="Desenvolvedores" data-en="Developers">Desenvolvedores</a>
+                        <a href="orientadores.html">Orientadores</a>
+                        <a href="desenvolvedores.html">Desenvolvedores</a>
                     </div>
                 </div>
-                <a href="contato.html" data-pt="Contato" data-en="Contact">Contato</a>
+                <a href="contato.html">Contato</a>
             </nav>
-            
-            <button class="idioma" id="languageBtn">EN</button>
+            <a href="desenvolvedores_en.html" class="idioma" id="languageBtn">EN</a>
         </div>
     </header>
 
@@ -41,90 +36,76 @@
     <main>
         <!-- Page Header -->
         <section class="page-header container">
-            <p class="tag" data-pt="SOBRE" data-en="ABOUT">SOBRE</p>
-            <h1 data-pt="Profissionais de TI" data-en="IT Professionals">Profissionais de TI</h1>
-            <p data-pt="A tecnologia depende de pessoas com diferentes conhecimentos, funções e responsabilidades." data-en="Technology depends on people with different knowledge, roles and responsibilities.">
-                A tecnologia depende de pessoas com diferentes conhecimentos, funções e responsabilidades.
-            </p>
+            <p class="tag">SOBRE</p>
+            <h1>Profissionais de TI</h1>
+            <p>A tecnologia depende de pessoas com diferentes conhecimentos, funções e responsabilidades.</p>
         </section>
 
         <!-- Content Grid Layout -->
         <section class="container conteudo">
             <!-- Article: What is IT -->
             <article class="texto">
-                <h2 data-pt="O que é Tecnologia da Informação?" data-en="What is Information Technology?">O que é Tecnologia da Informação?</h2>
-                <p data-pt="Tecnologia da Informação (TI) é a área que envolve o uso de computadores, sistemas, redes, dados e softwares para armazenar, processar, proteger e transmitir informações. É uma área ampla, formada por profissionais com especialidades diferentes." data-en="Information Technology (IT) involves using computers, systems, networks, data and software to store, process, protect and transmit information. It is a broad field made up of professionals with different specialties.">
-                    Tecnologia da Informação (TI) é a área que envolve o uso de computadores, sistemas, redes, dados e softwares para armazenar, processar, proteger e transmitir informações. É uma área ampla, formada por profissionais com especialidades diferentes.
-                </p>
+                <h2>O que é Tecnologia da Informação?</h2>
+                <p>Tecnologia da Informação (TI) é a área que envolve o uso de computadores, sistemas, redes, dados e softwares para armazenar, processar, proteger e transmitir informações. É uma área ampla, formada por profissionais com especialidades diferentes.</p>
             </article>
 
             <!-- Info Box: Why multiple careers -->
             <div class="info-box">
-                <h3 data-pt="Por que existem tantas profissões?" data-en="Why are there so many careers?">Por que existem tantas profissões?</h3>
-                <p data-pt="Um produto digital passa por várias etapas: planejamento, desenvolvimento, design, testes, implantação, segurança, análise de dados, suporte e comunicação. Cada etapa pode envolver profissionais especializados." data-en="A digital product goes through several stages: planning, development, design, testing, deployment, security, data analysis, support and communication. Each stage may involve specialized professionals.">
-                    Um produto digital passa por várias etapas: planejamento, desenvolvimento, design, testes, implantação, segurança, análise de dados, suporte e comunicação. Cada etapa pode envolver profissionais especializados.
-                </p>
+                <h3>Por que existem tantas profissões?</h3>
+                <p>Um produto digital passa por várias etapas: planejamento, desenvolvimento, design, testes, implantação, segurança, análise de dados, suporte e comunicação. Cada etapa pode envolver profissionais especializados.</p>
             </div>
 
             <!-- Timeline: Product Lifecycle -->
             <div class="timeline">
                 <div>
                     <span>01</span>
-                    <h3 data-pt="Planejamento" data-en="Planning">Planejamento</h3>
-                    <p data-pt="Entender o problema e definir objetivos." data-en="Understand the problem and define goals.">Entender o problema e definir objetivos.</p>
+                    <h3>Planejamento</h3>
+                    <p>Entender o problema e definir objetivos.</p>
                 </div>
                 <div>
                     <span>02</span>
-                    <h3 data-pt="Criação" data-en="Creation">Criação</h3>
-                    <p data-pt="Projetar e desenvolver a solução." data-en="Design and develop the solution.">Projetar e desenvolver a solução.</p>
+                    <h3>Criação</h3>
+                    <p>Projetar e desenvolver a solução.</p>
                 </div>
                 <div>
                     <span>03</span>
-                    <h3 data-pt="Validação" data-en="Validation">Validação</h3>
-                    <p data-pt="Testar, corrigir e melhorar o produto." data-en="Test, fix and improve the product.">Testar, corrigir e melhorar o produto.</p>
+                    <h3>Validação</h3>
+                    <p>Testar, corrigir e melhorar o produto.</p>
                 </div>
                 <div>
                     <span>04</span>
-                    <h3 data-pt="Entrega" data-en="Delivery">Entrega</h3>
-                    <p data-pt="Publicar, monitorar e dar suporte." data-en="Release, monitor and provide support.">Publicar, monitorar e dar suporte.</p>
+                    <h3>Entrega</h3>
+                    <p>Publicar, monitorar e dar suporte.</p>
                 </div>
             </div>
 
             <!-- Block: Content Manager/Creator -->
             <section class="bloco">
-                <h2 data-pt="Gestor/Criador de Conteúdos" data-en="Content Manager/Creator">Gestor/Criador de Conteúdos</h2>
-                <p data-pt="No contexto de TI, o gestor ou criador de conteúdos trabalha na produção e organização de materiais digitais, podendo transformar assuntos técnicos em textos, vídeos, posts, tutoriais, cursos e outros formatos. Também pode analisar o público, definir objetivos, organizar calendários editoriais e acompanhar resultados." data-en="In IT, a content manager or creator works on producing and organizing digital materials, turning technical subjects into texts, videos, posts, tutorials, courses and other formats. They can also analyze audiences, define goals, organize editorial calendars and monitor results.">
-                    No contexto de TI, o gestor ou criador de conteúdos trabalha na produção e organização de materiais digitais, podendo transformar assuntos técnicos em textos, vídeos, posts, tutoriais, cursos e outros formatos. Também pode analisar o público, definir objetivos, organizar calendários editoriais e acompanhar resultados.
-                </p>
+                <h2>Gestor/Criador de Conteúdos</h2>
+                <p>No contexto de TI, o gestor ou criador de conteúdos trabalha na produção e organização de materiais digitais, podendo transformar assuntos técnicos em textos, vídeos, posts, tutoriais, cursos e outros formatos. Também pode analisar o público, definir objetivos, organizar calendários editoriais e acompanhar resultados.</p>
             </section>
 
             <!-- Block: Education & Skills -->
             <section class="bloco">
-                <h2 data-pt="Formação e habilidades" data-en="Education and skills">Formação e habilidades</h2>
-                <p data-pt="Não existe uma única formação obrigatória para todas as profissões de TI. Dependendo do cargo, podem ser úteis cursos técnicos, graduação em áreas como Desenvolvimento de Sistemas, Ciência da Computação, Sistemas de Informação, Análise e Desenvolvimento de Sistemas, Redes ou formações relacionadas. Portfólio, projetos, cursos complementares e prática também podem fazer diferença." data-en="There is no single mandatory education path for every IT career. Depending on the position, technical courses and degrees such as Computer Science, Information Systems, Systems Analysis and Development, Networks or related fields may be useful. A portfolio, projects, additional courses and practice can also make a difference.">
-                    Não existe uma única formação obrigatória para todas as profissões de TI. Dependendo do cargo, podem ser úteis cursos técnicos, graduação em áreas como Desenvolvimento de Sistemas, Ciência da Computação, Sistemas de Informação, Análise e Desenvolvimento de Sistemas, Redes ou formações relacionadas. Portfólio, projetos, cursos complementares e prática também podem fazer diferença.
-                </p>
+                <h2>Formação e habilidades</h2>
+                <p>Não existe uma única formação obrigatória para todas as profissões de TI. Dependendo do cargo, podem ser úteis cursos técnicos, graduação em áreas como Desenvolvimento de Sistemas, Ciência da Computação, Sistemas de Informação, Análise e Desenvolvimento de Sistemas, Redes ou formações relacionadas. Portfólio, projetos, cursos complementares e prática também podem fazer diferença.</p>
             </section>
 
             <!-- Block: Schools & Institutions -->
             <section class="bloco">
-                <h2 data-pt="Escolas e instituições recomendadas" data-en="Recommended schools and institutions">Escolas e instituições recomendadas</h2>
-                <p data-pt="Para quem busca se qualificar na região e no estado, destacam-se instituições públicas e privadas reconhecidas pela formação técnica e superior em TI:" data-en="For those looking to qualify in the region and the state, renowned public and technical institutions stand out for IT education:">
-                    Para quem busca se qualificar na região e no estado, destacam-se instituições públicas e privadas reconhecidas pela formação técnica e superior em TI:
-                </p>
+                <h2>Escolas e instituições recomendadas</h2>
+                <p>Para quem busca se qualificar na região e no estado, destacam-se instituições públicas e privadas reconhecidas pela formação técnica e superior em TI:</p>
                 <ul>
-                    <li data-pt="ETEC de Hortolândia: Cursos técnicos gratuitos de excelência na área de tecnologia." data-en="ETEC of Hortolândia: Free technical courses of excellence in the technology field.">ETEC de Hortolândia: Cursos técnicos gratuitos de excelência na área de tecnologia.</li>
-                    <li data-pt="FATEC (Faculdade de Tecnologia): Faculdades de tecnologia públicas do estado de São Paulo com cursos superiores gratuitos (como ADS e Gestão da Tecnologia da Informação)." data-en="FATEC (College of Technology): Public technology colleges in the state of São Paulo with free higher education courses (like ADS and IT Management).">FATEC (Faculdade de Tecnologia): Faculdades de tecnologia públicas do estado de São Paulo com cursos superiores gratuitos (como ADS e Gestão da Tecnologia da Informação).</li>
-                    <li data-pt="SENAI e SENAC: Instituições tradicionais com forte ligação com o mercado de trabalho, oferecendo cursos técnicos e de qualificação profissional." data-en="SENAI and SENAC: Traditional institutions with a strong connection to the job market, offering technical and professional qualification courses.">SENAI e SENAC: Instituições tradicionais com forte ligação com o mercado de trabalho, oferecendo cursos técnicos e de qualificação profissional.</li>
+                    <li>ETEC de Hortolândia: Cursos técnicos gratuitos de excelência na área de tecnologia.</li>
+                    <li>FATEC (Faculdade de Tecnologia): Faculdades de tecnologia públicas do estado de São Paulo com cursos superiores gratuitos (como ADS e Gestão da Tecnologia da Informação).</li>
+                    <li>SENAI e SENAC: Instituições tradicionais com forte ligação com o mercado de trabalho, oferecendo cursos técnicos e de qualificação profissional.</li>
                 </ul>
             </section>
 
             <!-- Warning Box: Salaries -->
             <div class="aviso">
-                <strong data-pt="Sobre salários:" data-en="About salaries:">Sobre salários:</strong>
-                <span data-pt="os valores variam bastante conforme cargo, experiência, região, empresa, modelo de contratação e especialização. Por isso, os salários apresentados na página de aplicações são referências aproximadas e não garantias." data-en="values vary significantly according to position, experience, region, company, employment model and specialization. Therefore, salaries shown on the applications page are approximate references, not guarantees.">
-                    os valores variam bastante conforme cargo, experiência, região, empresa, modelo de contratação e especialização. Por isso, os salários apresentados na página de aplicações são referências aproximadas e não garantias.
-                </span>
+                <strong>Sobre salários:</strong>
+                <span>os valores variam bastante conforme cargo, experiência, região, empresa, modelo de contratação e especialização. Por isso, os salários apresentados na página de aplicações são referências aproximadas e não garantias.</span>
             </div>
         </section>
     </main>
@@ -136,8 +117,8 @@
         </a>
         <div class="container footer-grid">
             <div>
-                <p data-pt="ETEC de Hortolândia 2026 - © Todos os direitos reservados" data-en="ETEC de Hortolândia 2026 - © All rights reserved">ETEC de Hortolândia 2026 - © Todos os direitos reservados</p>
-                <p><span data-pt="Trabalho acadêmico sem fins lucrativos." data-en="Non-profit academic work.">Trabalho acadêmico sem fins lucrativos.</span></p>
+                <p>ETEC de Hortolândia 2026 - © Todos os direitos reservados</p>
+                <p><span>Trabalho acadêmico sem fins lucrativos.</span></p>
             </div>
         </div>
     </footer>

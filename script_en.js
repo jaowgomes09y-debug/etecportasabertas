@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Validação do formulário com mensagens em português
+    // Validação do formulário com mensagens em inglês
     var form = document.getElementById("contactForm");
     var formMsg = document.getElementById("formMsg");
 
@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!campo.checkValidity()) {
                     valido = false;
                     if (erro) {
-                        if (campo.validity.valueMissing) erro.textContent = "Preencha este campo.";
-                        else if (campo.validity.typeMismatch) erro.textContent = "Digite um e-mail válido.";
-                        else erro.textContent = "Verifique este campo.";
+                        if (campo.validity.valueMissing) erro.textContent = "Please fill out this field.";
+                        else if (campo.validity.typeMismatch) erro.textContent = "Please enter a valid email address.";
+                        else erro.textContent = "Please check this field.";
                     }
                 } else if (erro) {
                     erro.textContent = "";
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
 
             if (valido) {
-                formMsg.textContent = "Avaliação enviada com sucesso!";
+                formMsg.textContent = "Review submitted successfully!";
                 form.reset();
             } else {
                 formMsg.textContent = "";
