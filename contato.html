@@ -51,7 +51,7 @@
             <!-- Formulário de Contato -->
             <form id="contactForm" novalidate>
                 <div class="campo">
-                    <label for="nome" data-pt="Nome completo" data-en="Full name">Nome completo</label>
+                    <label for="nome" data-pt="Nome completo" data-en="Full name" required pattern="[A-Za-zÀ-ÿ\s]+">Nome completo</label>
                     <input id="nome" name="nome" type="text" minlength="3">
                     <small class="erro"></small>
                 </div>
