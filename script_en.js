@@ -2,6 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
     var menuBtn = document.getElementById("menuBtn");
     var menu = document.getElementById("menu");
 
+    const currentPage = window.location.pathname.split("/").pop() || "index_en.html";
+    const navLinks = document.querySelectorAll("nav a[href]");
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute("href");
+        if (!href || href.startsWith("#")) return;
+
+        const cleanHref = href.split("#")[0];
+        const isCreditsPage = cleanHref === "creditos.html" || cleanHref === "creditos_en.html";
+
+        if (cleanHref === currentPage && !isCreditsPage) {
+            link.classList.add("ativo");
+        } else {
+            link.classList.remove("ativo");
+        }
+    });
+
     // Menu mobile
     if (menuBtn && menu) {
         menuBtn.addEventListener("click", () => {
