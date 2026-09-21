@@ -50,6 +50,14 @@ document.addEventListener("DOMContentLoaded", () => {
     var formMsg = document.getElementById("formMsg");
 
     if (form) {
+        const telefone = document.getElementById("telefone");
+
+        if (telefone) {
+            telefone.addEventListener("input", () => {
+                telefone.value = telefone.value.replace(/\D/g, "").slice(0, 11);
+            });
+        }
+
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 
