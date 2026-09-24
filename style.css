@@ -815,6 +815,46 @@ footer {
 }
 
 /* ==========================================
+   Botão "Voltar ao topo" animado com CSS
+   ========================================== */
+
+   footer {
+    position: relative; /* Necessário para posicionar o botão corretamente */
+  }
+  
+  .btn-topo {
+    position: absolute;
+    right: min(4%, 20px);
+    top: 30px; /* Alinha com o texto do rodapé */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: var(--accent);
+    color: #ffffff;
+    border-radius: 50%; /* Faz um círculo perfeito */
+    box-shadow: 0 4px 10px rgba(33, 142, 233, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-topo:hover {
+    background-color: var(--accent2);
+    transform: translateY(-5px); /* Efeito de flutuar para cima */
+    box-shadow: 0 6px 15px rgba(33, 142, 233, 0.4);
+    color: #ffffff;
+  }
+  
+  /* Ajuste para ecrãs mais pequenos (telemóveis) */
+  @media (max-width: 700px) {
+    .btn-topo {
+      position: static; /* Coloca o botão no fluxo normal */
+      margin-top: 20px;
+      align-self: center; /* Centra o botão no rodapé */
+    }
+  }
+
+/* ==========================================
    11. Responsividade
    ==========================================
    A parte final do CSS ajusta o layout para telas menores,
