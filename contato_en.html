@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contact form for the IT in Focus project.">
-    <title>IT Professionals | Contact</title>
+    <title>Digital Content Manager | Contact</title>
     
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
@@ -18,9 +18,9 @@
                 <a href="index_en.html">Home</a>
                 <a href="sobre_en.html">About</a>
                 <a href="aplicacoes_en.html">Applications</a>
-                <a href="bibliografia_en.html">Sources</a>
+                <a href="bibliografia_en.html">Bibliography</a>
                 <div class="submenu-container">
-                    <a href="creditos_en.html">Credits</a>
+                    <a href="">Credits</a>
                     <div class="submenu">
                         <a href="orientadores_en.html">Advisors</a>
                         <a href="desenvolvedores_en.html">Developers</a>
@@ -30,7 +30,7 @@
             </nav>
             <div class="seletor-idioma" aria-label="Select language">
                 <a href="contato.html" class="idioma" lang="pt-BR">PT</a>
-                <a href="contato_en.html" class="idioma ativo" lang="en" aria-current="page">EN</a>
+                <a href="contato_en.html" class="idioma ativo" lang="en" aria-current="page">USA</a>
             </div>
         </div>
     </header>
@@ -38,32 +38,30 @@
     <!-- ==================== MAIN CONTENT ==================== -->
     <main>
         <section class="page-header container">
-            <p class="tag">CONTACT</p>
             <h1>Contact the team</h1>
             <p>Send a message, rate the website or leave a suggestion.</p>
         </section>
 
-        <section class="container contato-grid">
-            <!-- Formulário de Contato -->
+        <section class="container contato-grid" style="display: block; max-width: 600px; margin: 0 auto;">
             <form id="contactForm" novalidate>
                 <div class="campo">
                     <label for="nome">Full name</label>
                     <input id="nome" name="nome" type="text" minlength="3" required pattern="[A-Za-zÀ-ÿ\s]+">
                     <small class="erro"></small>
                 </div>
-
+        
                 <div class="campo">
                     <label for="email">Email</label>
                     <input id="email" name="email" type="email" required placeholder="example@email.com">
                     <small class="erro"></small>
                 </div>
-
+        
                 <div class="campo">
                     <label for="telefone">Phone</label>
                     <input id="telefone" name="telefone" type="tel" pattern="[0-9() +.-]{8,}" required placeholder="(19) 99999-9999">
                     <small class="erro"></small>
                 </div>
-
+        
                 <div class="campo">
                     <label for="nota">Rate our website</label>
                     <select id="nota" name="nota" required>
@@ -76,38 +74,16 @@
                     </select>
                     <small class="erro"></small>
                 </div>
-
+        
                 <div class="campo">
                     <label for="comentario">Comment</label>
                     <textarea id="comentario" name="comentario"></textarea>
                 </div>
-
-                <button class="btn principal" type="submit">Send review</button>
+        
+                <button class="btn principal" type="submit">Send</button>
                 <p id="formMsg" class="form-msg"></p>
             </form>
-
-            <!-- Informações de Apoio -->
-            <aside class="contato-info">
-                <h2>Team</h2>
-                <ul class="contato-lista">
-                    <li>João Inácio Gomes da Silva</li>
-                    <li>Breno Fernando Silvino de Oliveira</li>
-                    <li>Caio Murilo de Almeida Guassu</li>
-                    <li>Bernardo Araujo Pinto</li>
-                </ul>
-                
-                <h3>Project</h3>
-                <p>ETEC de Hortolândia — 2026</p>
-                
-                <h3>Subject</h3>
-                <ul class="contato-lista">
-                    <li>PWI — Web Programming I</li>
-                    <li>English</li>
-                </ul>
-            </aside>
         </section>
-    </main>
-    <br><br><br><br><br><br><br>
     <!-- ==================== FOOTER ==================== -->
     <footer>
         <a href="#top">
